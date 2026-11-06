@@ -1,0 +1,155 @@
+<!--
+  Projeto: Modo Preguica | Arquivo: macarrao-alfredo.html
+  Pagina da receita completa de Macarrao Alfredo
+  Integrantes: [Nome 1] e [Nome 2]
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Macarrão Alfredo — Modo Preguiça</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+  <header id="topo" class="navbar">
+    <div class="navbar-inner">
+      <a class="logo" href="index.html">🍳 Modo Preguiça</a>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#receitas">Receitas</a></li>
+          <li><a href="lanches.html">Lanches</a></li>
+          <li><a href="index.html#comparativo">Comparativo</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+          <li><a class="link-externo" href="https://www.tudogostoso.com.br" target="_blank" rel="noopener">Site parceiro</a></li>
+        </ul>
+      </nav>
+
+      <span id="contador-favoritos" class="contador">♥ 0</span>
+    </div>
+  </header>
+
+  <main>
+
+    <nav class="trilha" aria-label="Você está aqui">
+      <a href="index.html">Início</a><span>/</span>Macarrão Alfredo
+    </nav>
+
+    <article class="secao">
+
+      <header class="receita-cabecalho">
+        <span class="badge">Massas</span>
+        <h1 class="receita-titulo">Macarrão Alfredo</h1>
+        <p class="receita-resumo">
+          Creme de leite, parmesão e alho. Molho branco cremoso pronto em 15 minutos.
+        </p>
+
+        <div class="receita-fichas">
+
+          <div class="ficha-info ficha-tempo">
+            <span class="ficha-icone" aria-hidden="true">⏱</span>
+            <span class="ficha-rotulo">Tempo de preparo</span>
+            <span class="ficha-valor">15 minutos</span>
+          </div>
+
+          <div class="ficha-info">
+            <span class="ficha-icone" aria-hidden="true">🍽</span>
+            <span class="ficha-rotulo">Louça suja</span>
+            <span class="ficha-valor">2 panelas</span>
+          </div>
+
+          <div class="ficha-info">
+            <span class="ficha-icone" aria-hidden="true">🍴</span>
+            <span class="ficha-rotulo">Porções</span>
+            <span class="ficha-valor">2 porções</span>
+          </div>
+
+          <div class="ficha-info">
+            <span class="ficha-icone" aria-hidden="true">📋</span>
+            <span class="ficha-rotulo">Dificuldade</span>
+            <span class="ficha-valor">Fácil</span>
+          </div>
+
+        </div>
+      </header>
+
+      <div class="receita-midia">
+
+        <div class="bloco-midia">
+          <p class="midia-rotulo">Imagem da receita</p>
+
+          <figure class="receita-figura">
+            <img src="imagem/macarrao-alfredo.jpg"
+                 alt="Prato de macarrão com molho branco cremoso e parmesão"
+                 loading="lazy">
+          </figure>
+        </div>
+
+        <div class="bloco-midia">
+          <p class="midia-rotulo">Vídeo do preparo</p>
+
+          <video controls preload="metadata" width="100%">
+            <source src="video/macarrao-alfredo.mp4" type="video/mp4">
+            Seu navegador não consegue reproduzir este vídeo.
+            <a href="video/macarrao-alfredo.mp4">Baixar o vídeo</a>
+          </video>
+        </div>
+
+      </div>
+
+      <div class="receita-corpo">
+
+        <section class="receita-bloco">
+          <h2 class="receita-subtitulo">Ingredientes</h2>
+
+          <ul class="receita-lista">
+            <li>250 g de macarrão (fettuccine ou espaguete)</li>
+            <li>1 caixinha de creme de leite (200 g)</li>
+            <li>100 g de queijo parmesão ralado</li>
+            <li>2 colheres de sopa de manteiga</li>
+            <li>2 dentes de alho picados</li>
+            <li>Sal e pimenta-do-reino a gosto</li>
+          </ul>
+        </section>
+
+        <section class="receita-bloco">
+          <h2 class="receita-subtitulo">Modo de preparo</h2>
+
+          <ol class="receita-passos">
+            <li>Coloque a água para ferver com sal e cozinhe o macarrão até ficar al dente.</li>
+            <li>Enquanto isso, derreta a manteiga em uma panela e doure o alho por 1 minuto em fogo baixo.</li>
+            <li>Junte o creme de leite e mexa até aquecer, sem deixar ferver.</li>
+            <li>Acrescente o parmesão aos poucos, mexendo até derreter e engrossar.</li>
+            <li>Tempere com sal e pimenta-do-reino.</li>
+            <li>Escorra o macarrão e misture ao molho na própria panela.</li>
+            <li>Sirva imediatamente com mais parmesão por cima.</li>
+          </ol>
+        </section>
+
+      </div>
+
+      <p class="receita-dica">
+        Dica: não deixe o creme de leite ferver. Se ferver, o molho talha e fica com
+        aspecto de coalhada.
+      </p>
+
+      <p class="receita-voltar">
+        <a class="botao botao-secundario" href="index.html#receitas">← Voltar para as receitas</a>
+      </p>
+
+    </article>
+
+  </main>
+
+  <footer class="rodape">
+    <p class="rodape-titulo">Modo Preguiça</p>
+    <p>Projeto acadêmico de Desenvolvimento Web — HTML, CSS e JavaScript.</p>
+    <p>Integrantes: [Nome 1] e [Nome 2]</p>
+    <p><a class="link-externo" href="https://www.tudogostoso.com.br" target="_blank" rel="noopener">Site de referência</a></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!--
+  Projeto: Modo Preguica - site de receitas para quem nao tem paciencia
+  Disciplina: Desenvolvimento Web | Arquivo: index.html
+  Integrantes: [Nome 1] e [Nome 2]
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modo Preguiça — Receitas para quem não tem paciência</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <style>
+    .destaque-surpresa {
+      animation: pulsar 1.2s ease-in-out 2;
+      outline: 3px solid var(--cor-secundaria);
+    }
+
+    @keyframes pulsar {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="topo" class="navbar">
+    <div class="navbar-inner">
+      <a class="logo" href="index.html">🍳 Modo Preguiça</a>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul>
+          <li><a href="#topo">Início</a></li>
+          <li><a href="#receitas">Receitas</a></li>
+          <li><a href="#comparativo">Comparativo</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a class="link-externo" href="https://www.tudogostoso.com.br" target="_blank" rel="noopener">Site parceiro</a></li>
+        </ul>
+      </nav>
+
+      <span id="contador-favoritos" class="contador">♥ 0</span>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <span class="selo" style="letter-spacing: 0.08em;">receitas sem drama</span>
+      <h1>Receitas para quem não tem paciência</h1>
+      <p class="hero-texto">
+        Cada receita mostra o tempo real de preparo e quanta louça você vai sujar.
+        Sem passo a passo infinito, sem ingrediente impossível.
+      </p>
+      <div class="hero-botoes">
+        <button id="btn-ver" class="botao botao-primario" type="button">Ver receitas</button>
+        <button id="btn-surpresa" class="botao botao-secundario" type="button">Surpreenda-me</button>
+      </div>
+    </section>
+
+    <section id="receitas" class="secao">
+      <h2>Nossas receitas</h2>
+      <p class="secao-texto">Filtre por categoria e salve as que você quer testar depois.</p>
+
+      <div class="filtros" role="group" aria-label="Filtrar receitas">
+        <button class="filtro ativo" type="button" data-categoria="todas">Todas</button>
+        <button class="filtro" type="button" data-categoria="massas">Massas</button>
+        <button class="filtro" type="button" data-categoria="instantaneos">Instantâneos</button>
+        <button class="filtro" type="button" data-categoria="lanches">Lanches</button>
+        <button class="filtro" type="button" data-categoria="doces">Doces</button>
+        <button class="filtro" type="button" data-categoria="favoritos">♥ Favoritos</button>
+      </div>
+
+      <p id="aviso-filtro" class="aviso-vazio" style="display: none;">
+        Você ainda não favoritou nenhuma receita. Clique no ♥ de um card para adicionar.
+      </p>
+
+      <div id="lista-receitas" class="grid-cards">
+
+        <article class="card" data-categoria="massas">
+          <div class="card-imagem" aria-hidden="true">🍝</div>
+          <div class="card-corpo">
+            <span class="badge">Massas</span>
+            <h3 class="card-titulo">Macarrão ao Molho Vermelho</h3>
+            <p class="card-diferenciais">
+              <span class="diferencial">⏱ 10 min</span>
+              <span class="diferencial">🍽 2 panelas</span>
+            </p>
+            <ul class="card-ingredientes">
+              <li>macarrão</li>
+              <li>molho de tomate</li>
+              <li>açúcar</li>
+              <li>alho</li>
+              <li>sal</li>
+            </ul>
+            <div class="card-acoes">
+              <a class="botao botao-card" href="macarrao-molho-vermelho.html">Ver receita</a>
+              <button class="botao-favorito" type="button" data-receita="Macarrão ao Molho Vermelho" aria-label="Favoritar Macarrão ao Molho Vermelho">♥</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="instantaneos">
+          <div class="card-imagem" aria-hidden="true">🍜</div>
+          <div class="card-corpo">
+            <span class="badge">Instantâneos</span>
+            <h3 class="card-titulo">Miojo com Requeijão</h3>
+            <p class="card-diferenciais">
+              <span class="diferencial">⏱ 5 min</span>
+              <span class="diferencial">🍽 1 panela</span>
+            </p>
+            <ul class="card-ingredientes">
+              <li>miojo</li>
+              <li>requeijão</li>
+              <li>leite</li>
+              <li>manteiga</li>
+            </ul>
+            <div class="card-acoes">
+              <a class="botao botao-card" href="miojo-requeijao.html">Ver receita</a>
+              <button class="botao-favorito" type="button" data-receita="Miojo com Requeijão" aria-label="Favoritar Miojo com Requeijão">♥</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="lanches">
+          <div class="card-imagem" aria-hidden="true">🥪</div>
+          <div class="card-corpo">
+            <span class="badge">Lanches</span>
+            <h3 class="card-titulo">Misto Quente</h3>
+            <p class="card-diferenciais">
+              <span class="diferencial">⏱ 4 min</span>
+              <span class="diferencial">🍽 1 frigideira</span>
+            </p>
+            <ul class="card-ingredientes">
+              <li>pão de forma</li>
+              <li>queijo</li>
+              <li>presunto</li>
+              <li>manteiga</li>
+            </ul>
+            <div class="card-acoes">
+              <a class="botao botao-card" href="misto-quente.html">Ver receita</a>
+              <button class="botao-favorito" type="button" data-receita="Misto Quente" aria-label="Favoritar Misto Quente">♥</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="doces">
+          <div class="card-imagem" aria-hidden="true">🍫</div>
+          <div class="card-corpo">
+            <span class="badge">Doces</span>
+            <h3 class="card-titulo">Brigadeiro de Micro-ondas</h3>
+            <p class="card-diferenciais">
+              <span class="diferencial">⏱ 8 min</span>
+              <span class="diferencial">🍽 1 bowl</span>
+            </p>
+            <ul class="card-ingredientes">
+              <li>leite condensado</li>
+              <li>chocolate em pó</li>
+              <li>manteiga</li>
+              <li>granulado</li>
+            </ul>
+            <div class="card-acoes">
+              <a class="botao botao-card" href="brigadeiro-micro-ondas.html">Ver receita</a>
+              <button class="botao-favorito" type="button" data-receita="Brigadeiro de Micro-ondas" aria-label="Favoritar Brigadeiro de Micro-ondas">♥</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="massas">
+          <div class="card-imagem" aria-hidden="true">🧄</div>
+          <div class="card-corpo">
+            <span class="badge">Massas</span>
+            <h3 class="card-titulo">Macarrão Alfredo</h3>
+            <p class="card-diferenciais">
+              <span class="diferencial">⏱ 15 min</span>
+              <span class="diferencial">🍽 2 panelas</span>
+            </p>
+            <ul class="card-ingredientes">
+              <li>macarrão</li>
+              <li>creme de leite</li>
+              <li>queijo parmesão</li>
+              <li>manteiga</li>
+              <li>alho</li>
+            </ul>
+            <div class="card-acoes">
+              <a class="botao botao-card" href="macarrao-alfredo.html">Ver receita</a>
+              <button class="botao-favorito" type="button" data-receita="Macarrão Alfredo" aria-label="Favoritar Macarrão Alfredo">♥</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="instantaneos">
+          <div class="card-imagem" aria-hidden="true">🧈</div>
+          <div class="card-corpo">
+            <span class="badge">Instantâneos</span>
+            <h3 class="card-titulo">Miojo na Manteiga</h3>
+            <p class="card-diferenciais">
+              <span class="diferencial">⏱ 5 min</span>
+              <span class="diferencial">🍽 1 panela</span>
+            </p>
+            <ul class="card-ingredientes">
+              <li>miojo</li>
+              <li>manteiga</li>
+              <li>orégano</li>
+              <li>sal</li>
+            </ul>
+            <div class="card-acoes">
+              <a class="botao botao-card" href="miojo-manteiga.html">Ver receita</a>
+              <button class="botao-favorito" type="button" data-receita="Miojo na Manteiga" aria-label="Favoritar Miojo na Manteiga">♥</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="lanches">
+          <div class="card-imagem" aria-hidden="true">🥫</div>
+          <div class="card-corpo">
+            <span class="badge">lanches</span>
+            <h3 class="card-titulo">Sanduíche de Atum</h3>
+            <p class="card-diferenciais">
+              <span class="diferencial">⏱ 3 min</span>
+              <span class="diferencial">🍽 0 louça</span>
+            </p>
+            <ul class="card-ingredientes">
+              <li>pão</li>
+              <li>atum</li>
+              <li>maionese</li>
+              <li>cebola</li>
+              <li>limão</li>
+            </ul>
+            <div class="card-acoes">
+              <a class="botao botao-card" href="sanduiche-atum.html">Ver receita</a>
+              <button class="botao-favorito" type="button" data-receita="Sanduíche de Atum" aria-label="Favoritar Sanduíche de Atum">♥</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="doces">
+          <div class="card-imagem" aria-hidden="true">🍋</div>
+          <div class="card-corpo">
+            <span class="badge">doces</span>
+            <h3 class="card-titulo">Mousse de Limão</h3>
+            <p class="card-diferenciais">
+              <span class="diferencial">⏱ 10 min</span>
+              <span class="diferencial">🍽 1 liquidificador</span>
+            </p>
+            <ul class="card-ingredientes">
+              <li>leite condensado</li>
+              <li>creme de leite</li>
+              <li>suco de limão</li>
+              <li>biscoito</li>
+            </ul>
+            <div class="card-acoes">
+              <a class="botao botao-card" href="mousse-limao.html">Ver receita</a>
+              <button class="botao-favorito" type="button" data-receita="Mousse de Limão" aria-label="Favoritar Mousse de Limão">♥</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="comparativo" class="secao">
+      <h2>Comparativo</h2>
+      <p class="secao-texto">Toque em qualquer linha para ver os ingredientes e o modo de preparo.</p>
+
+      <div class="tabela-wrap">
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th scope="col">Receita</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">Tempo de preparo</th>
+              <th scope="col">Louça suja</th>
+            </tr>
+          </thead>
+          <tbody id="corpo-comparativo">
+            <tr class="linha-receita" data-receita="Macarrão ao Molho Vermelho" tabindex="0" role="button" aria-expanded="false">
+              <td>Macarrão ao Molho Vermelho</td>
+              <td>Massas</td>
+              <td>10 min</td>
+              <td>2 panelas</td>
+            </tr>
+            <tr class="linha-receita" data-receita="Miojo com Requeijão" tabindex="0" role="button" aria-expanded="false">
+              <td>Miojo com Requeijão</td>
+              <td>Instantâneos</td>
+              <td>5 min</td>
+              <td>1 panela</td>
+            </tr>
+            <tr class="linha-receita" data-receita="Misto Quente" tabindex="0" role="button" aria-expanded="false">
+              <td>Misto Quente</td>
+              <td>Lanches</td>
+              <td>4 min</td>
+              <td>1 frigideira</td>
+            </tr>
+            <tr class="linha-receita" data-receita="Brigadeiro de Micro-ondas" tabindex="0" role="button" aria-expanded="false">
+              <td>Brigadeiro de Micro-ondas</td>
+              <td>Doces</td>
+              <td>8 min</td>
+              <td>1 bowl</td>
+            </tr>
+            <tr class="linha-receita" data-receita="Macarrão Alfredo" tabindex="0" role="button" aria-expanded="false">
+              <td>Macarrão Alfredo</td>
+              <td>Massas</td>
+              <td>15 min</td>
+              <td>2 panelas</td>
+            </tr>
+            <tr class="linha-receita" data-receita="Miojo na Manteiga" tabindex="0" role="button" aria-expanded="false">
+              <td>Miojo na Manteiga</td>
+              <td>Instantâneos</td>
+              <td>5 min</td>
+              <td>1 panela</td>
+            </tr>
+            <tr class="linha-receita" data-receita="Sanduíche de Atum" tabindex="0" role="button" aria-expanded="false">
+              <td>Sanduíche de Atum</td>
+              <td>Lanches</td>
+              <td>3 min</td>
+              <td>0 louça</td>
+            </tr>
+            <tr class="linha-receita" data-receita="Mousse de Limão" tabindex="0" role="button" aria-expanded="false">
+              <td>Mousse de Limão</td>
+              <td>Doces</td>
+              <td>10 min</td>
+              <td>1 liquidificador</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="contato" class="secao">
+      <h2>Sugira uma receita</h2>
+      <p class="secao-texto">Tem uma receita preguiçosa que resolve sua vida? Manda pra gente.</p>
+
+      <form id="form-contato" class="formulario">
+        <div class="campo">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required minlength="3">
+        </div>
+
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="voce@email.com" required>
+        </div>
+
+        <div class="campo">
+          <label for="categoria">Categoria favorita</label>
+          <select id="categoria" name="categoria" required>
+            <option value="">Selecione</option>
+            <option value="massas">Massas</option>
+            <option value="instantaneos">Instantâneos</option>
+            <option value="lanches">Lanches</option>
+            <option value="doces">Doces</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="mensagem">Sua sugestão</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Ex.: pão na chapa com requeijão, 3 minutos, 0 louça" required minlength="10"></textarea>
+        </div>
+
+        <button class="botao botao-primario" type="submit">Enviar sugestão</button>
+        <p id="mensagem-form" class="mensagem-form" role="status"></p>
+      </form>
+    </section>
+
+    <section id="sugestoes" class="secao">
+      <h2>Sugestões enviadas</h2>
+      <p class="secao-texto">
+        Tudo o que for enviado pelo formulário fica salvo neste navegador,
+        mesmo depois de fechar a página.
+      </p>
+
+      <div class="sugestoes-topo">
+        <span id="contador-sugestoes" class="selo-contagem">0 sugestões</span>
+        <button id="btn-limpar-sugestoes" class="botao-limpar" type="button">Limpar todas</button>
+      </div>
+
+      <ul id="lista-sugestoes" class="lista-sugestoes"></ul>
+
+      <p id="aviso-sugestoes" class="aviso-vazio">
+        Nenhuma sugestão enviada ainda. Use o formulário acima.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p class="rodape-titulo">Modo Preguiça</p>
+    <p>Projeto acadêmico de Desenvolvimento Web — HTML, CSS e JavaScript.</p>
+    <p>Integrantes: [Nome 1] e [Nome 2]</p>
+    <p><a class="link-externo" href="https://www.tudogostoso.com.br" target="_blank" rel="noopener">Site de referência</a></p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
